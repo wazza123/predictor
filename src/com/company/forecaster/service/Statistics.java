@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Statistics {
 
-    List<Result> results;
-    int correctPredictionsAmount;
+    private List<Result> results;
+    private int correctPredictionsAmount;
 
     private int max(double[] a) {
 

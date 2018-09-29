@@ -8,6 +8,7 @@ public class NeuralNetworkClassifier implements Classifier {
 
     private MultiLayerPerceptron neuralNetwork;
     private MomentumBackpropagation momentumBackpropagation;
+    private final String NEURAL_NETWORK_FILE_PATH = "data\\neuron";
 
     private void createNetwork() {
 
@@ -23,7 +24,7 @@ public class NeuralNetworkClassifier implements Classifier {
     @Override
     public void init() {
 
-        neuralNetwork = (MultiLayerPerceptron) MultiLayerPerceptron.createFromFile("D:\\neuron");
+        neuralNetwork = (MultiLayerPerceptron) MultiLayerPerceptron.createFromFile(NEURAL_NETWORK_FILE_PATH);
     }
 
     @Override
@@ -31,6 +32,7 @@ public class NeuralNetworkClassifier implements Classifier {
 
         createNetwork();
         neuralNetwork.learn(dataSet);
+        neuralNetwork.save(NEURAL_NETWORK_FILE_PATH);
     }
 
     @Override
