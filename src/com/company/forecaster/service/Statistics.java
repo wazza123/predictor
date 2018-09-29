@@ -41,17 +41,13 @@ public class Statistics {
 
     public void calculateStatistics() {
 
-        int s = 0;
-
         for (Result result : results) {
 
             if (predictionIsCorrect(result.getActualResult(),result.getPredictedResult())) {
 
-                s++;
+                correctPredictionsAmount++;
             }
         }
-
-        correctPredictionsAmount = s;
     }
 
     public double getCorrectPredictionsRatio() {
