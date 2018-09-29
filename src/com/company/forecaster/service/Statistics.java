@@ -9,7 +9,7 @@ public class Statistics {
     private List<Result> results;
     private int correctPredictionsAmount;
 
-    private int max(double[] a) {
+    private int findMax(double[] a) {
 
         int max = 0;
 
@@ -24,9 +24,9 @@ public class Statistics {
         return max;
     }
 
-    private boolean result(double[] d, double[] f) {
+    private boolean predictionIsCorrect(double[] d, double[] f) {
 
-        return max(d) == max(f);
+        return findMax(d) == findMax(f);
     }
 
     public void load(List<Result> results) {
@@ -45,7 +45,7 @@ public class Statistics {
 
         for (Result result : results) {
 
-            if (result(result.getActualResult(),result.getPredictedResult())) {
+            if (predictionIsCorrect(result.getActualResult(),result.getPredictedResult())) {
 
                 s++;
             }
